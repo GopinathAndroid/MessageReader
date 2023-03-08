@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    android:background="?android:attr/activatedBackgroundIndicator">
+
+    <RelativeLayout
+        android:id="@+id/colorLayout"
+        android:layout_width="70dp"
+        android:layout_height="fill_parent"
+        android:layout_weight=".08"
+        android:background="#000000">
+
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8:00 am"
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:textStyle="bold"
+            android:paddingBottom="5dp"></TextView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.92"
+        android:layout_gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shadowdark"
+            android:scaleType="fitXY"
+            android:layout_alignTop="@+id/bg"
+            android:layout_alignBottom="@id/bg"
+            android:layout_alignLeft="@id/bg"
+            android:layout_alignRight="@id/bg" />
+
+        <LinearLayout
+            android:id="@+id/bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rihanna Love the way lie"
+                android:textColor="@color/list4"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp" />
+
+
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:textColor="#58595B"
+                android:textStyle="bold"
+                android:text="Just gona stand there and ..."
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:maxLines="2" />
+
+
+            <!-- <Button
+                 android:id="@+id/more"
+                 android:layout_width="50dp"
+                 android:layout_height="15dp"
+                 android:background="@drawable/moreinfo"
+                 android:layout_gravity="right"
+                 android:layout_marginBottom="10dp"
+                 android:layout_marginRight="15dp"
+                 android:visibility="visible"/>-->
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

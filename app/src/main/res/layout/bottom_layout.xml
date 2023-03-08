@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="50dp"
+    android:orientation="horizontal"
+    android:weightSum="2"
+
+    android:background="?android:attr/activatedBackgroundIndicator"
+    android:baselineAligned="false">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView_selected_message_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100"
+            android:textColor="@color/list4"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:padding="6dp"
+            android:layout_centerInParent="true"
+
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.92"
+        android:layout_gravity="center_vertical">
+
+
+        <LinearLayout
+            android:id="@+id/ll_bottom_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="top"
+            android:visibility="visible">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. 10th september"
+                android:textColor="@color/list4"
+                android:textSize="@dimen/datefontsize"
+                android:singleLine="true"
+                android:layout_gravity="top"
+                android:layout_marginBottom="5dp"
+                android:maxLines="1"
+                android:id="@+id/textView_bottom_date" />
+
+            <TextView
+                android:id="@+id/textView_selected_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textColor="#58595B"
+                android:textStyle="bold"
+                android:text="@string/loremipsum"
+                android:layout_gravity="center_vertical"
+
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:scrollHorizontally="true"
+                android:marqueeRepeatLimit="marquee_forever"
+
+                />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/colorLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_weight=".08"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="gone"
+
+        >
+
+        <ImageButton
+            android:id="@+id/btn_ttssettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="10dp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_action_build" />
+
+        <ImageButton
+            android:id="@+id/btn_bottom_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_action_language" />
+
+        <ImageButton
+            android:id="@+id/btn_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="10dp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_action_activity" />
+
+        <ImageButton
+            android:id="@+id/btn_nightmode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="10dp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_action_invertcolor" />
+
+        <ImageButton
+            android:id="@+id/btn_equalizer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="10dp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_action_equalizer" />
+
+
+        <ImageButton
+            android:id="@+id/btn_bottom_overflow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:background="?selectableItemBackgroundBorderless"
+            app:srcCompat="@drawable/ic_more_vert_black"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</LinearLayout>

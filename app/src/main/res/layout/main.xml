@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sothree="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+
+    <com.lazywhatsapreader.slideup.SlidingUpPanelLayout xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/adContainerView"
+        android:gravity="bottom"
+        sothree:umanoDragView="@+id/dragView"
+        sothree:umanoOverlay="true"
+        sothree:umanoPanelHeight="68dp"
+        sothree:umanoParallaxOffset="100dp"
+        sothree:umanoScrollableView="@+id/list"
+        sothree:umanoShadowHeight="4dp">
+
+
+        <!-- MAIN CONTENT -->
+        <FrameLayout
+            android:id="@+id/frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+
+            >
+
+            <androidx.appcompat.widget.Toolbar xmlns:sothree="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/main_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                android:titleTextColor="#ffffff"
+                sothree:theme="@style/ActionBar" />
+
+            <include
+                layout="@layout/activity_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="?attr/actionBarSize"
+
+                android:layout_marginBottom="68dp" />
+
+
+        </FrameLayout>
+
+        <!-- SLIDING LAYOUT -->
+        <RelativeLayout
+
+            android:id="@+id/dragView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:clickable="true"
+            android:focusable="false"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/include_bottom_layout"
+                layout="@layout/bottom_layout"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_alignParentTop="true" />
+
+            <View
+                android:id="@+id/view_bottom_shadow"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_below="@+id/include_bottom_layout"
+                android:background="@drawable/below_shadow" />
+
+            <ScrollView
+                android:id="@+id/edt_scrollview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/player_include_layout"
+                android:layout_below="@+id/view_bottom_shadow">
+
+                <EditText
+                    android:id="@+id/editText_highlightingtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:editable="false"
+                    android:inputType="none"
+                    android:paddingStart="5dp"
+                    android:paddingLeft="5dp"
+                    android:scrollbars="vertical"
+                    android:text="@string/loremipsumbig"
+                    android:textColor="@android:color/black"
+                    android:textSize="18dp" />
+            </ScrollView>
+
+            <include
+                android:id="@+id/player_include_layout"
+                layout="@layout/player_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true" />
+
+        </RelativeLayout>
+    </com.lazywhatsapreader.slideup.SlidingUpPanelLayout>
+
+    <View
+        android:id="@+id/new_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/adContainerView"
+
+        android:background="@drawable/below_shadow"
+
+        />
+    <!-- view for AdMob Banner Ad -->
+    <FrameLayout
+        android:id="@+id/adContainerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="visible" />
+</RelativeLayout>

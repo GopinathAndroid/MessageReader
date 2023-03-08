@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+
+    repositories {
+        google()
+
+        // If you're using a version of Gradle lower than 4.1, you must
+        // instead use:
+        //
+        // maven {
+        //     url 'https://maven.google.com'
+        // }
+    }
+    defaultConfig {
+        applicationId "com.lazywhatsapreader"
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 16
+        versionName "1.6.7"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':nativetemplates')
+
+    implementation('com.vdurmont:emoji-java:5.1.1')
+            { exclude group: 'org.json', module: 'json' }
+    /* for emoji removal from string*/
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.google.android.gms:play-services-ads:19.6.0'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
+    implementation 'com.google.firebase:firebase-analytics:18.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    // implementation "com.daimajia.swipelayout:library:1.2.0@aar"  //swipe to delete
+
+}
+apply plugin: 'com.google.gms.google-services'

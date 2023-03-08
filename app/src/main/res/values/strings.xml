@@ -1,0 +1,136 @@
+<resources>
+    <string name="app_name">Message Reader</string>
+    <string name="delete">Delete</string>
+    <string name="share_content">Try this app https://play.google.com/store/apps/details?id=com.lazywhatsapreader</string>
+    <string name="share_subject">Lazy Message Reader</string>
+    <string name="share_chooser">Share To</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <string name="youtubelink">How to Use</string>
+    <string name="rate_it">Rate the app</string>
+    <string name="reset_app">Reset Application</string>
+    <string name="share_through">Share through</string>
+
+    <!--Production -->
+    <string name="banner_ad_unit_id">ca-app-pub-8178788216966186/4353521403</string>
+    <string name="banner_settingspage_ad_unit_id">ca-app-pub-8178788216966186/8804810102</string>
+    <string name="interstitial_settings_page_ad_unit_id">ca-app-pub-8178788216966186/7714717188</string>
+    <string name="native_ad_close_app">ca-app-pub-8178788216966186/6624839634</string>
+    <string name="application_ad_unit_id">ca-app-pub-8178788216966186~8555833756</string>
+
+<!--Stage -->
+    <!--<string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_settingspage_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="interstitial_settings_page_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="native_ad_close_app">ca-app-pub-8178788216966186/6624839634</string>
+    <string name="application_ad_unit_id">ca-app-pub-8178788216966186~8555833756</string>-->
+
+
+    <string name="loremipsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="loremipsumbig">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</string>
+
+    <string name="player_rate">Speech Rate:</string>
+    <string name="player_pitch">Speech Pitch:</string>
+    <string name="player_volume">Speech Volume:</string>
+
+
+    <string name="welcome_message1">Hi welcome to Lazy Message Reader. This apps helps to read all your large messages from any app through tts speech for to save human time and energy. Here it is explaining how to use this app.</string>
+    <string name="welcome_message2">Click the round icon in bottom to open whatsapp or your favourite app. Copy some large messages in any app which has to read,those messages will capture from Clipboard. Now Play all the message in Lazy Reader app by clicking play button in bottom.Then tts Engine will start to read the messages for you.</string>
+    <string name="welcome_message3">Advantages of Lazy Message Reader: This app filters all the Emojis, unwanted symbols, numbers, Url\'s and unwanted mobile number when copying multiple messages from any app. Even you can remove and tune those in settings. The main advantages is tts start to speak the next messages once the message completes. You can adjust the voice pitch, speech rate, and volume by clicking icon in adjust panel. Now Start Copy, Play, Hear and Enjoy.</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string name="pref_symbols">If enabled app won\'t read below Symbols [!@#%^&amp;%_=&lt;&gt;€¢£¥₩₹$\/()?✓*√π÷×¶∆{};\'+-\"~]</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+
+
+    <string-array name="pref_atleast_titles">
+        <item>0 words</item>
+        <item>5 words</item>
+        <item>10 words</item>
+        <item>15 words</item>
+        <item>20 words</item>
+        <item>25 words</item>
+
+    </string-array>
+    <string-array name="pref_atleast_values">
+        <item>0</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+
+    </string-array>
+</resources>

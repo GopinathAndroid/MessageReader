@@ -1,0 +1,40 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.dialog.tinyicons.MainActivity">
+    <item
+        android:id="@+id/action_rate_it"
+        android:title="@string/rate_it"
+        android:orderInCategory="103"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_otherapps"
+        android:title="Other Useful apps"
+        android:orderInCategory="104"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/youtubelink"
+        android:title="@string/youtubelink"
+        android:orderInCategory="102"
+        app:showAsAction="never"
+        android:visible="false" />
+    <item
+        android:id="@+id/action_settings"
+        android:title="Settings"
+        android:icon="@drawable/ic_action_settings_white"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_all_share"
+        android:title="@string/share_through"
+        android:orderInCategory="105"
+        android:icon="@drawable/ic_action_share"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_activity"
+        android:title="Full View"
+        android:icon="@drawable/ic_action_activitywhite"
+        app:showAsAction="always" />
+</menu>

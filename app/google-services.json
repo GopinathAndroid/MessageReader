@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "453924331587",
+    "firebase_url": "https://lazy-whatsap-reader.firebaseio.com",
+    "project_id": "lazy-whatsap-reader",
+    "storage_bucket": "lazy-whatsap-reader.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:453924331587:android:f3fca07e65e10000",
+        "android_client_info": {
+          "package_name": "com.lazywhatsapreader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "453924331587-4dgo2g4uqgglmc90j8vpp6girlood5q1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2edtzmgPCUi5KQL-DYpexZmNoynL-sJ4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="key_preference_top"
+
+    >
+
+    <PreferenceCategory
+        android:title="Filter Speech"
+        android:key="delay_category">
+
+
+        <CheckBoxPreference
+            android:key="key_emoji"
+            android:title="Filter Emojis"
+            android:summary="If enabled app won't read emojis"
+            android:defaultValue="true" />
+        <CheckBoxPreference
+            android:key="key_number"
+            android:title="Filter Numbers"
+            android:summary="If enabled app won't read Numeric Values"
+            android:defaultValue="true" />
+
+        <CheckBoxPreference
+            android:key="key_Url"
+            android:title="Filter Url"
+            android:summary="If enabled app won't read any Url"
+            android:defaultValue="true" />
+        <CheckBoxPreference
+            android:key="key_Symbols"
+            android:title="Filter Symbols"
+            android:summary="@string/pref_symbols"
+            android:defaultValue="true" />
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Customizations"
+        android:key="custom_category">
+
+        <ListPreference
+            android:defaultValue="5"
+            android:entries="@array/pref_atleast_titles"
+            android:entryValues="@array/pref_atleast_values"
+            android:key="atleastwordkey"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null"
+            android:title="Minimum Words"
+            android:summary="Set minimum words count atleast to copy from clipboard" />
+        <com.lazywhatsapreader.activities.AdPreference android:layout="@layout/ad_layout" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="key_nightmode"
+            android:title="Night Mode"
+            android:summary="Enable to show reading messages in black screen" />
+
+
+        <Preference
+            android:title="Select App to open"
+            android:key="key_openOtherApp"
+            android:summary="Select which application wants to open when clicking FAB icon" />
+
+        <Preference
+            android:title="Share to"
+            android:key="key_share"
+            android:summary="Share this app with your friends" />
+
+        <Preference
+            android:title="Rate app"
+            android:key="key_rateapp"
+            android:summary="Rate app in PlayStore" />
+
+        <Preference
+            android:title="Reset Settings"
+            android:key="key_resetapp"
+            android:summary="Reset settings to default" />
+    </PreferenceCategory>
+
+
+</PreferenceScreen>
