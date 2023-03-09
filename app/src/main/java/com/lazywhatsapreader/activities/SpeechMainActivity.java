@@ -33,6 +33,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
@@ -45,6 +46,7 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.formats.UnifiedNativeAd;
+import com.google.android.gms.ads.nativead.NativeAd;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.lazywhatsapreader.App;
 import com.lazywhatsapreader.R;
@@ -81,7 +83,7 @@ public class SpeechMainActivity extends BaseActivity implements
     private GranularTextToSpeech mTtsWrapper;
     private TextToSpeech mTts;
     public static Locale mLocale;
-    UnifiedNativeAd adobj;
+    NativeAd adobj;
     /**
      * Handler used for transferring TTS callbacks to the main thread.
      */
@@ -967,9 +969,15 @@ public class SpeechMainActivity extends BaseActivity implements
             }
 
             @Override
+            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                adContainerView.setVisibility(View.GONE);
+                super.onAdFailedToLoad(loadAdError);
+            }
+
+           /* @Override
             public void onAdFailedToLoad(int i) {
                 adContainerView.setVisibility(View.GONE);
-            }
+            }*/
         });
     }
     private AdSize getAdSize() {
@@ -997,7 +1005,14 @@ public class SpeechMainActivity extends BaseActivity implements
                 System.out.println("==== native ad failed");
             }
         });
-        builder.forUnifiedNativeAd(new UnifiedNativeAd.OnUnifiedNativeAdLoadedListener()
+        builder.forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
+            @Override
+            public void onNativeAdLoaded(@NonNull NativeAd nativeAd) {
+                adobj = nativeAd;
+                System.out.println("==== native ad loaded");
+            }
+        });
+       /* builder.forUnifiedNativeAd(new UnifiedNativeAd.OnUnifiedNativeAdLoadedListener()
         {
             @Override
             public void onUnifiedNativeAdLoaded(UnifiedNativeAd unifiedNativeAd)
@@ -1005,7 +1020,7 @@ public class SpeechMainActivity extends BaseActivity implements
                 adobj = unifiedNativeAd;
                 System.out.println("==== native ad loaded");
             }
-        });
+        });*/
         AdLoader adLoader =builder.build();
         adLoader.loadAd(new AdRequest.Builder().build());
     }

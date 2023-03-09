@@ -2,24 +2,21 @@ package com.lazywhatsapreader.utils;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 
-import androidx.annotation.NonNull;
 
 import com.google.android.ads.nativetemplates.TemplateView;
-import com.google.android.gms.ads.formats.UnifiedNativeAd;
+import com.google.android.gms.ads.nativead.NativeAd;
 import com.lazywhatsapreader.R;
 
 public class ExitDialog extends Dialog
 {
-    UnifiedNativeAd ad;
+    NativeAd ad;
     Activity activity;
-    public ExitDialog(Activity activity, UnifiedNativeAd ad)
+    public ExitDialog(Activity activity, NativeAd ad)
     {
         super(activity);
         this.activity = activity;

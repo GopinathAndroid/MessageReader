@@ -15,10 +15,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import androidx.annotation.NonNull;
+
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.LoadAdError;
 import com.lazywhatsapreader.R;
 
 public class AdPreference extends Preference {
@@ -75,9 +78,15 @@ public class AdPreference extends Preference {
             }
 
             @Override
+            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                adContainerView.setVisibility(View.GONE);
+               // super.onAdFailedToLoad(loadAdError);
+            }
+
+           /* @Override
             public void onAdFailedToLoad(int i) {
                 adContainerView.setVisibility(View.GONE);
-            }
+            }*/
         });
     }
     private AdSize getAdSize() {
