@@ -17,8 +17,8 @@ android {
         applicationId "com.lazywhatsapreader"
         minSdkVersion 19
         targetSdkVersion 33
-        versionCode 17
-        versionName "1.6.8"
+        versionCode 18
+        versionName "1.6.9"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
     }
