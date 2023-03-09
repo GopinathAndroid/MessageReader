@@ -14,14 +14,14 @@
     <string name="share_through">Share through</string>
 
     <!--Production -->
-    <string name="banner_ad_unit_id">ca-app-pub-8178788216966186/4353521403</string>
+   <!-- <string name="banner_ad_unit_id">ca-app-pub-8178788216966186/4353521403</string>
     <string name="banner_settingspage_ad_unit_id">ca-app-pub-8178788216966186/8804810102</string>
     <string name="interstitial_settings_page_ad_unit_id">ca-app-pub-8178788216966186/7714717188</string>
     <string name="native_ad_close_app">ca-app-pub-8178788216966186/6624839634</string>
-    <string name="application_ad_unit_id">ca-app-pub-8178788216966186~8555833756</string>
+    <string name="application_ad_unit_id">ca-app-pub-8178788216966186~8555833756</string>-->
 
-<!--Stage -->
-    <!--<string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+<!--Test -->
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
     <string name="banner_settingspage_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
     <string name="interstitial_settings_page_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
     <string name="native_ad_close_app">ca-app-pub-8178788216966186/6624839634</string>

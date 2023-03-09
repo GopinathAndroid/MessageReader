@@ -2,11 +2,13 @@ package com.lazywhatsapreader.utils;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.media.AudioManager;
+import android.os.AsyncTask;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -213,39 +215,69 @@ public class Dialogs implements SeekBar.OnSeekBarChangeListener {
     }
 
     public void appListDialog(Activity activity) {
-        ListView lv;
-        final PackageManager pm = context.getPackageManager();
-        AlertDialog ad;
-//get a list of installed apps.
-        List<ApplicationInfo> packages = CommonUtilities.checkForLaunchIntent(pm.getInstalledApplications(PackageManager.GET_META_DATA), pm);
-
-        for (ApplicationInfo packageInfo : packages) {
-            Log.d(TAG, "Installed package :" + packageInfo.packageName);
-            Log.d(TAG, "Source dir : " + packageInfo.sourceDir);
-            Log.d(TAG, "Launch Activity :" + pm.getLaunchIntentForPackage(packageInfo.packageName));
-        }
-
-        dialog = new AlertDialog.Builder(activity);
-        LayoutInflater inflater = activity.getLayoutInflater();
-        View dialogView = inflater.inflate(R.layout.applist_main, null);
-        dialog.setView(dialogView);
-        dialog.setTitle("Select your favourite app to open");
-        dialog.setCancelable(true);
-
-        lv =  dialogView.findViewById(R.id.list_applist);
-
-        dialog.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-                dialog.dismiss();
-            }
-        });
-        ad = dialog.create();
-        ad.show();
-        lv.setAdapter(new AllListAdapter(activity, packages, sh, ad));
+        new LoadInstalledApplications(activity).execute();
     }
 
+    private class LoadInstalledApplications extends AsyncTask<Void, Void, Void> {
+        ListView lv;
+        Activity activity;
+        AlertDialog ad;
+        PackageManager pm = context.getPackageManager();
+        ProgressDialog progress;
+        List<ApplicationInfo> packages;
+        LoadInstalledApplications(Activity activity){
+            this.activity=activity;
+        }
+        @Override
+        protected void onPreExecute() {
 
+            progress = ProgressDialog.show(activity, null,
+                    "Loading applications... Please Wait");
+            super.onPreExecute();
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            //get a list of installed apps.
+             packages = CommonUtilities.checkForLaunchIntent(pm.getInstalledApplications(PackageManager.GET_META_DATA), pm);
+
+            /*for (ApplicationInfo packageInfo : packages) {
+                Log.d(TAG, "Installed package :" + packageInfo.packageName);
+                Log.d(TAG, "Source dir : " + packageInfo.sourceDir);
+                Log.d(TAG, "Launch Activity :" + pm.getLaunchIntentForPackage(packageInfo.packageName));
+            }*/
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+
+
+            if (progress != null && progress.isShowing())
+                progress.dismiss();
+
+            dialog = new AlertDialog.Builder(activity);
+            LayoutInflater inflater = activity.getLayoutInflater();
+            View dialogView = inflater.inflate(R.layout.applist_main, null);
+            dialog.setView(dialogView);
+            dialog.setTitle("Select your favourite app to open");
+            dialog.setCancelable(true);
+
+            lv =  dialogView.findViewById(R.id.list_applist);
+
+            dialog.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                    dialog.dismiss();
+                }
+            });
+            ad = dialog.create();
+            ad.show();
+            lv.setAdapter(new AllListAdapter(activity, packages, SharedPreference.getInstance(context), ad));
+            super.onPostExecute(result);
+        }
+
+    }
 
 }
